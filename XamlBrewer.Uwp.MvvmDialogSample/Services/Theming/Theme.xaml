@@ -34,10 +34,11 @@
     <!-- Splitview Content -->
     <SolidColorBrush x:Key="PageBackgroundBrush"
                      Color="#FFF05F66" />
+    <!-- FF683524 -->
     <SolidColorBrush x:Key="PageTitleBrush"
-                     Color="#FF683524" />
+                     Color="#FFE8DABB" />
     <SolidColorBrush x:Key="PageForegroundBrush"
-                     Color="#544759" />
+                     Color="#FFE8DABB" />
 
     <!-- Default Accent Color -->
     <Color x:Key="DefaultAccentColor">#8882A8</Color>

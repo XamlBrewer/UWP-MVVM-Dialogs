@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Xaml;
 
 namespace XamlBrewer.Uwp.MvvmDialogSample.ViewModels
 {
@@ -13,20 +14,42 @@ namespace XamlBrewer.Uwp.MvvmDialogSample.ViewModels
     {
         private DelegateCommand confirmationCommand;
         private bool confirmed;
+        private string inputString;
+
+        private DelegateCommand inputStringCommand;
 
         public MainPageViewModel()
         {
             confirmationCommand = new DelegateCommand(Confirmation_Executed);
+            inputStringCommand = new DelegateCommand(InputString_Executed);
         }
 
         public ICommand ConfirmationCommand => confirmationCommand;
 
-        private async void Confirmation_Executed()
+        public ICommand InputStringCommand => inputStringCommand;
+
+        public async void InputText_Click(object sender, RoutedEventArgs e)
+        {
+            var bananas = await ModalView.InputTextDialogAsync(
+                "Dinges",
+                "Danges"
+                )                ;
+        }
+
+            private async void Confirmation_Executed()
         {
             confirmed = await ModalView.ConfirmationDialogAsync(
-                    "Vinde gaa maan gat niet te dik in deze rok?",
-                    "Ja",
-                    "nee"
+                    "What's the status of Schrödinger's cat?",
+                    "Alive",
+                    "Dead"
+                );
+        }
+
+        private async void InputString_Executed()
+        {
+            inputString = await ModalView.InputStringDialogAsync(
+                "What is your favorite beer?",
+                "Trappist"
                 );
         }
     }

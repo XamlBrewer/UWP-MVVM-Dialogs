@@ -30,7 +30,7 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
             <TextBlock TextWrapping="WrapWholeWords"
-                       Foreground="Silver"
+                       Foreground="{StaticResource PageForegroundBrush}"
                        FontSize="24"
                        VerticalAlignment="Center"
                        Grid.ColumnSpan="2">

@@ -49,10 +49,14 @@
                     Command="{Binding ConfirmationCommand}"
                     HorizontalAlignment="Stretch"
                     Margin="0 20 0 0" />
+            <!-- x:Bind to Command in ViewModel -->
             <Button Content="String Input Box"
+                    Command="{x:Bind ViewModel.InputStringCommand}"
                     HorizontalAlignment="Stretch"
                     Margin="0 20 0 0" />
+            <!-- x:Bind to Method in ViewModel -->
             <Button Content="Text Input Box"
+                    Click="{x:Bind ViewModel.InputText_Click}"
                     HorizontalAlignment="Stretch"
                     Margin="0 20 0 0" />
         </StackPanel>
