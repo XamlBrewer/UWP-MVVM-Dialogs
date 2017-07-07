@@ -4,5 +4,26 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:XamlBrewer.Uwp.MvvmDialogSample"
     RequestedTheme="Light">
-
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.ThemeDictionaries>
+                <ResourceDictionary x:Key="Default">
+                    <Color x:Key="SystemAccentColor">#B1560F</Color>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Dark">
+                    <Color x:Key="SystemAccentColor">#B1560F</Color>
+                </ResourceDictionary>
+                <ResourceDictionary x:Key="Light">
+                    <Color x:Key="SystemAccentColor">#B1560F</Color>
+                </ResourceDictionary>
+            </ResourceDictionary.ThemeDictionaries>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Theme colors and icons -->
+                <ResourceDictionary Source="Services/Icons/Icons.xaml" />
+                <ResourceDictionary Source="Services/Theming/Theme.xaml" />
+                <!-- Custom Styles -->
+                <ResourceDictionary Source="Services/Dialogs/ContentDialog.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
 </Application>

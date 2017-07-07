@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Theme Resources -->
+    <!-- http://www.colourlovers.com/palette/1422878 -->
+    
+    <!-- General Purpose -->
+    <SolidColorBrush x:Key="TenPercentDarkerBrush"
+                     Color="Black"
+                     Opacity=".1" />
+    <SolidColorBrush x:Key="TenPercentLighterBrush"
+                     Color="White"
+                     Opacity=".1" />
+    <SolidColorBrush x:Key="HighlightBrush"
+                     Color="#8882A8" />
+
+    <!-- Header -->
+    <SolidColorBrush x:Key="TitlebarBackgroundBrush"
+                     Color="#FF8A2F3E" />
+    <SolidColorBrush x:Key="TitlebarBackgroundDarkBrush"
+                     Color="#FF8A2F3E" />
+    <SolidColorBrush x:Key="TitlebarBackgroundLightBrush"
+                     Color="#FF8A2F3E" />
+    <SolidColorBrush x:Key="StatusbarBackgroundBrush"
+                     Color="#FF8A2F3E" />
+
+    <!-- Splitview Pane -->
+    <SolidColorBrush x:Key="SplitViewBackgroundBrush"
+                     Color="#FFAA3A46" />
+    <SolidColorBrush x:Key="SplitViewForegroundBrush"
+                     Color="#FFE8DABB" />
+    <SolidColorBrush x:Key="HamburgerForegroundBrush"
+                     Color="#FFE8DABB" />
+
+    <!-- Splitview Content -->
+    <SolidColorBrush x:Key="PageBackgroundBrush"
+                     Color="#FFF05F66" />
+    <SolidColorBrush x:Key="PageTitleBrush"
+                     Color="#FF683524" />
+    <SolidColorBrush x:Key="PageForegroundBrush"
+                     Color="#544759" />
+
+    <!-- Default Accent Color -->
+    <Color x:Key="DefaultAccentColor">#8882A8</Color>
+
+</ResourceDictionary>
