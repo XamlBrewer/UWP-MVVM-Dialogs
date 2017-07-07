@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mvvm.Services;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -24,6 +25,13 @@ namespace XamlBrewer.Uwp.MvvmDialogSample
         {
             this.InitializeComponent();
             this.DataContext = new MainPageViewModel();
+        }
+
+        internal MainPageViewModel ViewModel => DataContext as MainPageViewModel;
+
+        private async void MessageBox_Click(object sender, RoutedEventArgs e)
+        {
+            await ModalView.MessageDialogAsync("There is no WIFI.", "Try again later", "Got it!");
         }
     }
 }

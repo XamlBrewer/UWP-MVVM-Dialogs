@@ -3,7 +3,7 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:XamlBrewer.Uwp.MvvmDialogSample"
-    RequestedTheme="Light">
+    RequestedTheme="Dark">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.ThemeDictionaries>
@@ -22,7 +22,7 @@
                 <ResourceDictionary Source="Services/Icons/Icons.xaml" />
                 <ResourceDictionary Source="Services/Theming/Theme.xaml" />
                 <!-- Custom Styles -->
-                <ResourceDictionary Source="Services/Dialogs/ContentDialog.xaml" />
+                <!--<ResourceDictionary Source="Services/Dialogs/ContentDialog.xaml" />-->
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

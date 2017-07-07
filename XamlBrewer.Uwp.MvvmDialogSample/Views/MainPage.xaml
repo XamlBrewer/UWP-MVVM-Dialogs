@@ -34,5 +34,28 @@
                Grid.Row="1"
                Source="ms-appx:///Assets/Conversation.jpg" />
 
+        <!-- Beef -->
+        <StackPanel Orientation="Vertical"
+                    VerticalAlignment="Top"
+                    HorizontalAlignment="Left"
+                    Grid.Row="1">
+            <!-- Click Event Handler in the View -->
+            <Button Content="Message Box"
+                    Click="MessageBox_Click"
+                    HorizontalAlignment="Stretch"
+                    Margin="0 20 0 0" />
+            <!-- Binding to Command in ViewModel -->
+            <Button Content="Confirmation Box"
+                    Command="{Binding ConfirmationCommand}"
+                    HorizontalAlignment="Stretch"
+                    Margin="0 20 0 0" />
+            <Button Content="String Input Box"
+                    HorizontalAlignment="Stretch"
+                    Margin="0 20 0 0" />
+            <Button Content="Text Input Box"
+                    HorizontalAlignment="Stretch"
+                    Margin="0 20 0 0" />
+        </StackPanel>
+
     </Grid>
 </Page>
