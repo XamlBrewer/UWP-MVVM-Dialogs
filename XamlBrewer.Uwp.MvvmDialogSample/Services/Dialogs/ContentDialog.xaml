@@ -8,8 +8,8 @@
         <Setter Property="Foreground"
                 Value="{ThemeResource ContentDialogForeground}" />
         <!-- Modified -->
-        <Setter Property="Background"
-                Value="#EEEEEE" />
+        <!--<Setter Property="Background"
+                Value="#EEEEEE" />-->
         <Setter Property="BorderBrush"
                 Value="{ThemeResource ContentDialogBorderBrush}" />
         <Setter Property="HorizontalAlignment"
@@ -158,14 +158,15 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <!-- Added -->
-                            <toolkit:DropShadowPanel Color="#AA7A3F"
+                            <toolkit:DropShadowPanel Color="{StaticResource PageBackgroundColor}"
                                                      BlurRadius="20">
                                 <!-- Modified BorderBrush -->
+                                <!-- Background="{TemplateBinding Background}" -->
                                 <Border x:Name="BackgroundElement"
-                                        Background="{TemplateBinding Background}"
+                                        Background="#FF4F2316"
                                         FlowDirection="{TemplateBinding FlowDirection}"
                                         BorderThickness="{ThemeResource ContentDialogBorderWidth}"
-                                        BorderBrush="#AA7A3F"
+                                        BorderBrush="{StaticResource PageBackgroundBrush}"
                                         MaxWidth="{TemplateBinding MaxWidth}"
                                         MaxHeight="{TemplateBinding MaxHeight}"
                                         MinWidth="{ThemeResource ContentDialogMinWidth}"

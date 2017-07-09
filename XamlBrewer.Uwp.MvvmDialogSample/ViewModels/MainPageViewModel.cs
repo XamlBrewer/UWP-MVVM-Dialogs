@@ -1,10 +1,5 @@
 ﻿using Mvvm;
 using Mvvm.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.UI.Xaml;
 
@@ -28,14 +23,6 @@ namespace XamlBrewer.Uwp.MvvmDialogSample.ViewModels
 
         public ICommand InputStringCommand => inputStringCommand;
 
-        public async void InputText_Click(object sender, RoutedEventArgs e)
-        {
-            var bananas = await ModalView.InputTextDialogAsync(
-                "Dinges",
-                "Danges"
-                )                ;
-        }
-
             private async void Confirmation_Executed()
         {
             confirmed = await ModalView.ConfirmationDialogAsync(
@@ -50,6 +37,14 @@ namespace XamlBrewer.Uwp.MvvmDialogSample.ViewModels
             inputString = await ModalView.InputStringDialogAsync(
                 "What is your favorite beer?",
                 "Trappist"
+                );
+        }
+
+        public async void InputText_Click(object sender, RoutedEventArgs e)
+        {
+            var bananas = await ModalView.InputTextDialogAsync(
+                "Dinges",
+                "Danges"
                 );
         }
     }

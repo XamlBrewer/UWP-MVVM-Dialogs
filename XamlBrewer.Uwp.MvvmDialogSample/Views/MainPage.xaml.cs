@@ -31,7 +31,7 @@ namespace XamlBrewer.Uwp.MvvmDialogSample
 
         private async void MessageBox_Click(object sender, RoutedEventArgs e)
         {
-            await ModalView.MessageDialogAsync("There is no WIFI.", "Try again later", "Got it!");
+            await ModalView.MessageDialogAsync("There is no WIFI.", "Try again later", "Got it");
         }
     }
 }

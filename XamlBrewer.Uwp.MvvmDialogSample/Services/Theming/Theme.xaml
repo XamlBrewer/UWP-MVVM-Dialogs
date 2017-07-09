@@ -32,9 +32,11 @@
                      Color="#FFE8DABB" />
 
     <!-- Splitview Content -->
+    <Color x:Key="PageBackgroundColor">#FFF05F66</Color>
     <SolidColorBrush x:Key="PageBackgroundBrush"
                      Color="#FFF05F66" />
-    <!-- FF683524 -->
+    <!-- Brown from the picture: #FF683524 -->
+    <!-- Dark from the picture: #FF4F2316 -->
     <SolidColorBrush x:Key="PageTitleBrush"
                      Color="#FFE8DABB" />
     <SolidColorBrush x:Key="PageForegroundBrush"
