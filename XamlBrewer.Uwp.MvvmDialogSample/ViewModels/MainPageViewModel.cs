@@ -8,7 +8,7 @@ namespace XamlBrewer.Uwp.MvvmDialogSample.ViewModels
     internal class MainPageViewModel : ViewModelBase
     {
         private DelegateCommand confirmationCommand;
-        private bool confirmed;
+        private bool? confirmed;
         private string inputString;
 
         private DelegateCommand inputStringCommand;
@@ -28,7 +28,8 @@ namespace XamlBrewer.Uwp.MvvmDialogSample.ViewModels
             confirmed = await ModalView.ConfirmationDialogAsync(
                     "What's the status of Schrödinger's cat?",
                     "Alive",
-                    "Dead"
+                    "Dead",
+                    "Both"
                 );
         }
 

@@ -26,22 +26,28 @@ namespace Mvvm.Services
 
             await dialog.ShowAsync();
         }
-        public static async Task<bool> ConfirmationDialogAsync(string title)
+        public static async Task<bool?> ConfirmationDialogAsync(string title)
         {
-            return await ConfirmationDialogAsync(title, "OK", "Cancel");
+            return await ConfirmationDialogAsync(title, "OK", string.Empty, "Cancel");
         }
 
-        public static async Task<bool> ConfirmationDialogAsync(string title, string primaryButtonText, string secondaryButtonText)
+        public static async Task<bool?> ConfirmationDialogAsync(string title, string primaryButtonText, string secondaryButtonText, string closeButtonText)
         {
             var dialog = new ContentDialog
             {
                 Title = title,
-                IsPrimaryButtonEnabled = true,
+                //IsPrimaryButtonEnabled = true,
                 PrimaryButtonText = primaryButtonText,
-                IsSecondaryButtonEnabled = true,
-                SecondaryButtonText = secondaryButtonText
+                //IsSecondaryButtonEnabled = true,
+                SecondaryButtonText = secondaryButtonText,
+                CloseButtonText = closeButtonText
             };
             var result = await dialog.ShowAsync();
+
+            if (result == ContentDialogResult.None)
+            {
+                return null;
+            }
 
             return (result == ContentDialogResult.Primary);
         }
