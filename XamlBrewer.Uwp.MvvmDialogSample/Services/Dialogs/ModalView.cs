@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Media;
 
 namespace Mvvm.Services
 {
@@ -31,16 +33,21 @@ namespace Mvvm.Services
             return await ConfirmationDialogAsync(title, "OK", string.Empty, "Cancel");
         }
 
-        public static async Task<bool?> ConfirmationDialogAsync(string title, string primaryButtonText, string secondaryButtonText, string closeButtonText)
+        public static async Task<bool> ConfirmationDialogAsync(string title, string yesButtonText, string noButtonText)
+        {
+            return (await ConfirmationDialogAsync(title, yesButtonText, noButtonText, string.Empty)).Value;
+        }
+
+        public static async Task<bool?> ConfirmationDialogAsync(string title, string yesButtonText, string noButtonText, string cancelButtonText)
         {
             var dialog = new ContentDialog
             {
                 Title = title,
                 //IsPrimaryButtonEnabled = true,
-                PrimaryButtonText = primaryButtonText,
+                PrimaryButtonText = yesButtonText,
                 //IsSecondaryButtonEnabled = true,
-                SecondaryButtonText = secondaryButtonText,
-                CloseButtonText = closeButtonText
+                SecondaryButtonText = noButtonText,
+                CloseButtonText = cancelButtonText
             };
             var result = await dialog.ShowAsync();
 
@@ -59,8 +66,9 @@ namespace Mvvm.Services
                 AcceptsReturn = false,
                 Height = 32,
                 Text = defaultText,
-                Opacity = 1,
-                BorderThickness = new Thickness(1)
+                SelectionStart = defaultText.Length,
+                BorderThickness = new Thickness(1),
+                BorderBrush = new SolidColorBrush((Color)Application.Current.Resources["CustomDialogBorderColor"])
             };
             var dialog = new ContentDialog
             {
@@ -93,8 +101,11 @@ namespace Mvvm.Services
                 AcceptsReturn = true,
                 Height = 32 * 6,
                 Text = defaultText,
+                TextWrapping = TextWrapping.Wrap,
+                SelectionStart = defaultText.Length,
                 Opacity = 1,
-                BorderThickness = new Thickness(1)
+                BorderThickness = new Thickness(1),
+                BorderBrush = new SolidColorBrush((Color)Application.Current.Resources["CustomDialogBorderColor"])
             };
             var dialog = new ContentDialog
             {

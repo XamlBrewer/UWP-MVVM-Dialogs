@@ -1,7 +1,6 @@
 ﻿<Page x:Class="XamlBrewer.Uwp.MvvmDialogSample.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:controls="using:XamlBrewer.Uwp.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       mc:Ignorable="d">
@@ -40,25 +39,31 @@
                     HorizontalAlignment="Left"
                     Grid.Row="1">
             <!-- Click Event Handler in the View -->
-            <Button Content="Message Box"
+            <Button Content="Message Dialog"
                     Click="MessageBox_Click"
                     HorizontalAlignment="Stretch"
                     Padding="10"
                     Margin="0 20 0 0" />
             <!-- Binding to Command in ViewModel -->
-            <Button Content="Confirmation Box"
-                    Command="{Binding ConfirmationCommand}"
+            <Button Content="2-Button Confirmation Dialog"
+                    Command="{Binding ConfirmationCommandYesNo}"
+                    HorizontalAlignment="Stretch"
+                    Padding="10"
+                    Margin="0 20 0 0" />
+            <!-- Binding to Command in ViewModel -->
+            <Button Content="3-Button Confirmation Dialog"
+                    Command="{Binding ConfirmationCommandYesNoCancel}"
                     HorizontalAlignment="Stretch"
                     Padding="10"
                     Margin="0 20 0 0" />
             <!-- x:Bind to Command in ViewModel -->
-            <Button Content="String Input Box"
+            <Button Content="String Input Dialog"
                     Command="{x:Bind ViewModel.InputStringCommand}"
                     HorizontalAlignment="Stretch"
                     Padding="10"
                     Margin="0 20 0 0" />
             <!-- x:Bind to Method in ViewModel -->
-            <Button Content="Text Input Box"
+            <Button Content="Text Input Dialog"
                     Click="{x:Bind ViewModel.InputText_Click}"
                     HorizontalAlignment="Stretch"
                     Padding="10"

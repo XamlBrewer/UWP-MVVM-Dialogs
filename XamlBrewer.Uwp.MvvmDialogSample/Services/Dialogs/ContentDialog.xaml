@@ -3,13 +3,17 @@
                     xmlns:toolkit="using:Microsoft.Toolkit.Uwp.UI.Controls">
 
     <!-- Custom style for Windows.UI.Xaml.Controls.ContentDialog -->
+    <Color x:Key="CustomDialogBorderColor">#FFF05F66</Color>
+    <SolidColorBrush x:Key="CustomDialogBorderBrush"
+                     Color="#FFF05F66" />
+    <Color x:Key="CustomDialogBackgroundColor">#FF4F2316</Color>
+    <SolidColorBrush x:Key="CustomDialogBackgroundBrush"
+                     Color="#FF4F2316" />
+
     <!-- From  \(Program Files)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\10.0.10586.0\Generic  -->
     <Style TargetType="ContentDialog">
         <Setter Property="Foreground"
                 Value="{ThemeResource ContentDialogForeground}" />
-        <!-- Modified -->
-        <!--<Setter Property="Background"
-                Value="#EEEEEE" />-->
         <Setter Property="BorderBrush"
                 Value="{ThemeResource ContentDialogBorderBrush}" />
         <Setter Property="HorizontalAlignment"
@@ -158,15 +162,14 @@
                                 <ColumnDefinition Width="Auto" />
                             </Grid.ColumnDefinitions>
                             <!-- Added -->
-                            <toolkit:DropShadowPanel Color="{StaticResource PageBackgroundColor}"
+                            <toolkit:DropShadowPanel Color="{StaticResource CustomDialogBorderColor}"
                                                      BlurRadius="20">
-                                <!-- Modified BorderBrush -->
-                                <!-- Background="{TemplateBinding Background}" -->
+                                <!-- Modified Background and BorderBrush -->
                                 <Border x:Name="BackgroundElement"
-                                        Background="#FF4F2316"
+                                        Background="{StaticResource CustomDialogBackgroundBrush}"
                                         FlowDirection="{TemplateBinding FlowDirection}"
                                         BorderThickness="{ThemeResource ContentDialogBorderWidth}"
-                                        BorderBrush="{StaticResource PageBackgroundBrush}"
+                                        BorderBrush="{StaticResource CustomDialogBorderBrush}"
                                         MaxWidth="{TemplateBinding MaxWidth}"
                                         MaxHeight="{TemplateBinding MaxHeight}"
                                         MinWidth="{ThemeResource ContentDialogMinWidth}"
