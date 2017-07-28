@@ -56,7 +56,9 @@ namespace XamlBrewer.Uwp.MvvmDialogSample.ViewModels
             Debug.WriteLine("Opening String Input Dialog.");
             inputString = await ModalView.InputStringDialogAsync(
                 "How do you want to call this phenomenon?",
-                "Verschränkung"
+                "Verschränkung",
+                "Claim",
+                "Forget it"
                 );
             Debug.WriteLine(string.Format("String Input Dialog was closed with {0}.", inputString));
         }

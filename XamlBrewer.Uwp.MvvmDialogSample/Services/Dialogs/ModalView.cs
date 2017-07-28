@@ -12,11 +12,24 @@ namespace Mvvm.Services
     /// </summary>
     public static class ModalView
     {
+        /// <summary>
+        /// Opens a modal message dialog.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <param name="message">The message.</param>
+        /// <returns>Task.</returns>
         public static async Task MessageDialogAsync(string title, string message)
         {
             await MessageDialogAsync(title, message, "OK");
         }
 
+        /// <summary>
+        /// Opens a modal message dialog.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <param name="message">The message.</param>
+        /// <param name="buttonText">The button text.</param>
+        /// <returns>Task.</returns>
         public static async Task MessageDialogAsync(string title, string message, string buttonText)
         {
             var dialog = new ContentDialog
@@ -28,16 +41,37 @@ namespace Mvvm.Services
 
             await dialog.ShowAsync();
         }
+
+        /// <summary>
+        /// Opens a modal confirmation dialog.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <returns>Task&lt;System.Nullable&lt;System.Boolean&gt;&gt;.</returns>
         public static async Task<bool?> ConfirmationDialogAsync(string title)
         {
             return await ConfirmationDialogAsync(title, "OK", string.Empty, "Cancel");
         }
 
+        /// <summary>
+        /// Opens a modal confirmation dialog.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <param name="yesButtonText">The 'Yes' button text.</param>
+        /// <param name="noButtonText">The 'No' button text.</param>
+        /// <returns>Task&lt;System.Boolean&gt;.</returns>
         public static async Task<bool> ConfirmationDialogAsync(string title, string yesButtonText, string noButtonText)
         {
             return (await ConfirmationDialogAsync(title, yesButtonText, noButtonText, string.Empty)).Value;
         }
 
+        /// <summary>
+        /// Opens a modal confirmation dialog.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <param name="yesButtonText">The 'Yes' button text.</param>
+        /// <param name="noButtonText">The 'No' button text.</param>
+        /// <param name="cancelButtonText">The cancel button text.</param>
+        /// <returns>Task&lt;System.Nullable&lt;System.Boolean&gt;&gt;.</returns>
         public static async Task<bool?> ConfirmationDialogAsync(string title, string yesButtonText, string noButtonText, string cancelButtonText)
         {
             var dialog = new ContentDialog
@@ -59,7 +93,36 @@ namespace Mvvm.Services
             return (result == ContentDialogResult.Primary);
         }
 
+        /// <summary>
+        /// Opens a modal input dialog for a string.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <returns>Task&lt;System.String&gt;.</returns>
+        public static async Task<string> InputStringDialogAsync(string title)
+        {
+            return await InputStringDialogAsync(title, string.Empty);
+        }
+
+        /// <summary>
+        /// Opens a modal input dialog for a string.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <param name="defaultText">The default response text.</param>
+        /// <returns>Task&lt;System.String&gt;.</returns>
         public static async Task<string> InputStringDialogAsync(string title, string defaultText)
+        {
+            return await InputStringDialogAsync(title, defaultText, "OK", "Cancel");
+        }
+
+        /// <summary>
+        /// Opens a modal input dialog for a string.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <param name="defaultText">The default response text.</param>
+        /// <param name="okButtonText">The 'OK' button text.</param>
+        /// <param name="cancelButtonText">The 'Cancel' button text.</param>
+        /// <returns>Task&lt;System.String&gt;.</returns>
+        public static async Task<string> InputStringDialogAsync(string title, string defaultText, string okButtonText, string cancelButtonText)
         {
             var inputTextBox = new TextBox
             {
@@ -75,8 +138,8 @@ namespace Mvvm.Services
                 Content = inputTextBox,
                 Title = title,
                 IsSecondaryButtonEnabled = true,
-                PrimaryButtonText = "Ok",
-                SecondaryButtonText = "Cancel"
+                PrimaryButtonText = okButtonText,
+                SecondaryButtonText = cancelButtonText
             };
 
             if (await dialog.ShowAsync() == ContentDialogResult.Primary)
@@ -89,12 +152,36 @@ namespace Mvvm.Services
             }
         }
 
+        /// <summary>
+        /// Opens a modal input dialog for a multi-line text.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <returns>Task&lt;System.String&gt;.</returns>
         public static async Task<string> InputTextDialogAsync(string title)
         {
             return await InputTextDialogAsync(title, string.Empty);
         }
 
+        /// <summary>
+        /// Opens a modal input dialog for a multi-line text.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <param name="defaultText">The default text.</param>
+        /// <returns>Task&lt;System.String&gt;.</returns>
         public static async Task<string> InputTextDialogAsync(string title, string defaultText)
+        {
+            return await InputTextDialogAsync(title, defaultText, "OK", "Cancel");
+        }
+
+        /// <summary>
+        /// Opens a modal input dialog for a multi-line text.
+        /// </summary>
+        /// <param name="title">The title.</param>
+        /// <param name="defaultText">The default text.</param>
+        /// <param name="okButtonText">The 'OK' button text.</param>
+        /// <param name="cancelButtonText">The 'Cancel' button text.</param>
+        /// <returns>Task&lt;System.String&gt;.</returns>
+        public static async Task<string> InputTextDialogAsync(string title, string defaultText, string okButtonText, string cancelButtonText)
         {
             var inputTextBox = new TextBox
             {
@@ -112,8 +199,8 @@ namespace Mvvm.Services
                 Content = inputTextBox,
                 Title = title,
                 IsSecondaryButtonEnabled = true,
-                PrimaryButtonText = "Ok",
-                SecondaryButtonText = "Cancel"
+                PrimaryButtonText = okButtonText,
+                SecondaryButtonText = cancelButtonText
             };
 
             if (await dialog.ShowAsync() == ContentDialogResult.Primary)
