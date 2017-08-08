@@ -1,4 +1,5 @@
-# UWP-MVVM-DialogsAn MVVM Service providing elementary Modal Views in UWP.
+# UWP MVVM Dialogs
+An MVVM Service providing elementary Modal Views in UWP.
 
 Read the whole story here: https://xamlbrewer.wordpress.com/2017/08/02/an-elementary-dialog-service-for-uwp/
 
