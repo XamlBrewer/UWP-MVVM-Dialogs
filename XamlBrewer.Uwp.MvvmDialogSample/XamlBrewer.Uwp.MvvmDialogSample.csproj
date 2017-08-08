@@ -120,6 +120,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
+    <None Include="Services\Dialogs\ClassDiagram.cd" />
     <None Include="XamlBrewer.Uwp.MvvmDialogSample_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>

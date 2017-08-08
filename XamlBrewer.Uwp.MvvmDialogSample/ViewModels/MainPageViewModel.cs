@@ -43,7 +43,7 @@ namespace XamlBrewer.Uwp.MvvmDialogSample.ViewModels
         {
             Debug.WriteLine("3-State Confirmation Dialog will be opened.");
             confirmed = await ModalView.ConfirmationDialogAsync(
-                    "So, what's the status the cat?\nHint: use Quantum Mechanics.",
+                    "So, what's the status of the cat?\nHint: use Quantum Mechanics.",
                     "It's alive",
                     "It's dead",
                     "It's both"
